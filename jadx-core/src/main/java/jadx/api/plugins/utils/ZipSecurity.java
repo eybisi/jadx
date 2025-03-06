@@ -79,8 +79,8 @@ public class ZipSecurity {
 		}
 		try {
 			File currentPath = CommonFileUtils.CWD;
-			File canonical = new File(currentPath, entryName).getCanonicalFile();
-			if (isInSubDirectoryInternal(currentPath, canonical)) {
+			File absolute = new File(currentPath, entryName).getAbsoluteFile();
+			if (isInSubDirectoryInternal(currentPath, absolute)) {
 				return true;
 			}
 		} catch (Exception e) {
